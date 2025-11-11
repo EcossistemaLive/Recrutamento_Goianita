@@ -59,7 +59,7 @@
         h2 { font-size: var(--font-size-h2); }
         h3 { font-size: var(--font-size-h3); color: var(--text-primary); }
         
-        /* NOVO ESTILO H4 para os cards */
+        /* Estilo H4 para os cards */
         h4 {
             color: var(--text-muted); 
             font-weight: 600; 
@@ -127,15 +127,13 @@
             position: relative; /* Para o overlay do link */
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Alterado de space-between */
+            justify-content: flex-start;
         }
         .card:hover {
-            /* Estados de Interação: :hover */
             transform: translateY(-10px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), var(--accent-glow);
         }
         .card:focus-visible {
-            /* Estados de Interação: :focus-visible (Acessibilidade) */
             outline: 3px solid var(--accent-color);
             outline-offset: 4px;
         }
@@ -161,7 +159,7 @@
 
         /* Link de CV em Evidência */
         .cv-link {
-            color: var(--accent-color); /* Destaca o nome do candidato */
+            color: var(--accent-color);
             text-decoration: none;
             cursor: pointer;
             transition: color 0.3s ease;
@@ -170,7 +168,7 @@
             align-items: center;
         }
         .cv-link:hover {
-            color: var(--text-primary); /* Inversão de cores no hover */
+            color: var(--text-primary);
         }
         .cv-link .icon {
             margin-left: 8px;
@@ -299,7 +297,7 @@
 
                 <div class="instruction-box fade-in" style="animation-delay: 0.2s;">
                     <i data-lucide="mouse-pointer"></i>
-                    <span class="text-primary">O CV de Elayne Silva foi atualizado para um link direto, o de Adriely foi adicionado.</span>
+                    <span class="text-primary">Análises de Fábio e Elayne atualizadas com base nos CVs. Adriely adicionada.</span>
                 </div>
 
                 <div class="grid-3" style="margin-top: var(--space-md);">
@@ -313,11 +311,24 @@
                                 </a>
                             </h3>
                         </div>
-                        <p class="merriweather">Perfil <span class="text-accent">Administrativo e Supervisor de Equipes</span>.</p>
+                        <p class="merriweather" style="margin-bottom: 1rem;">
+                            <strong>Parecer Resumido:</strong> Perfil Sênior (45 anos), com forte background em **Liderança e Gestão de Equipes de Vendas** (Supervisor na Ciclo Engenharia por 9 anos, Líder no Atacadão). Experiência recente é volátil e desalinhada (Editor de Vídeo, Sócio em Confecção).
+                        </p>
+                        <p class="text-accent" style="font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem;">
+                            Recomendação: Aprovar para Entrevista (Prioridade Média).
+                        </p>
+                        <h4>Destaques do Perfil (Pontos Fortes)</h4>
                         <ul>
-                            <li><span class="text-accent">Força:</span> Graduado em Administração, experiência como Supervisor de Vendas e Líder de Loja (Atacadão).</li>
-                            <li><span class="text-accent">Habilidades:</span> Liderança, Treinamentos, Vendas por Telefone (Ciclo Engenharia).</li>
-                            <li><span class="text-accent">Insight:</span> Validar a motivação para retornar à <span style="font-weight: 700;">execução de vendas</span> (chão de loja) após experiência em gestão.</li>
+                            <li><span class="text-accent">Liderança Comprovada:</span> Quase 10 anos supervisionando vendas por telefone (Ciclo Engenharia). Sabe contratar, treinar e gerir metas.</li>
+                            <li><span class="text-accent">Formação Acadêmica:</span> Graduado em Administração, dando base teórica para a gestão.</li>
+                            <li><span class="text-accent">Visão de Dono:</span> Teve duas experiências como Sócio Proprietário, entendendo de finanças, estoque e gestão geral.</li>
+                        </ul>
+
+                        <h4>Pontos de Atenção (Foco para Entrevista)</h4>
+                        <ul>
+                            <li><span class="text-accent">Motivação (Crítico):</span> Por que um Administrador com 15 anos de liderança quer uma vaga de *execução* (chão de loja)? Risco de insatisfação a curto prazo é alto.</li>
+                            <li><span class="text-accent">Volatilidade Recente:</span> As 4 últimas posições (2017-2025) foram curtas ou fora da área. Entender a instabilidade.</li>
+                            <li><span class="text-accent">Telefone vs. Presencial:</span> Maior experiência foi em "vendas por telefone". Validar habilidade de venda consultiva presencial de alto padrão.</li>
                         </ul>
                     </div>
                     
@@ -330,11 +341,24 @@
                                 </a>
                             </h3>
                         </div>
-                        <p class="merriweather">Perfil de <span class="text-accent">Vendas (Execução) e Varejo de Utensílios/Casa</span>.</p>
+                        <p class="merriweather" style="margin-bottom: 1rem;">
+                            <strong>Parecer Resumido:</strong> Perfil de Varejo (Execução). Experiência direta e recente no varejo (Palmas Mix, Vip Papelaria), incluindo atendimento presencial e online (WhatsApp/Instagram). Entende o "ecossistema" da loja (Caixa, Recebimento, Estoque).
+                        </p>
+                        <p class="text-accent" style="font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem;">
+                            Recomendação: Aprovar para Entrevista (Prioridade Média).
+                        </p>
+                        <h4>Destaques do Perfil (Pontos Fortes)</h4>
                         <ul>
-                            <li><span class="text-accent">Força:</span> Experiência recente de 6 meses no ramo similar (Mais Mix) e boa comunicação. Menciona ser paciente, tranquila e <span style="font-weight: 700;">disposta a aprender</span>.</li>
-                            <li><span class="text-accent">Habilidades:</span> Conhece a Casa Goianita (indicava clientes) e tem experiência em atendimento. Motivada pela remuneração por comissão (salário ideal de R$ 2.500).</li>
-                            <li><span class="text-accent">Insight:</span> Validar a tolerância ao ambiente de <span class="text-accent">comissão pura</span> e experiência em lidar com clientes difíceis (ponto fraco na entrevista).</li>
+                            <li><span class="text-accent">Varejo Híbrido:</span> Experiência em vendas presenciais, telefone, WhatsApp e Instagram (Palmas Mix, Vip Papelaria).</li>
+                            <li><span class="text-accent">Visão 360° da Loja:</span> Experiência em "Operação de caixa", "auxílio em recebimento", "controle de estoque" e "reposição de mercadorias".</li>
+                            <li><span class="text-accent">Habilidades Comportamentais:</span> Autodeclara "Proativa", "Comunicativa" e "Atenciosa".</li>
+                        </ul>
+
+                        <h4>Pontos de Atenção (Foco para Entrevista)</h4>
+                        <ul>
+                            <li><span class="text-accent">Venda Transacional vs. Consultiva:</span> Experiências (papelaria, mix) são de varejo de giro rápido. Validar paciência para venda de alto valor.</li>
+                            <li><span class="text-accent">Estabilidade:</span> Passagens relativamente curtas. Validar resiliência para um modelo de comissão pura.</li>
+                            <li><span class="text-accent">Comunicação:</span> Validar se a comunicação é compatível com o público de alto padrão.</li>
                         </ul>
                     </div>
 
@@ -387,8 +411,8 @@
                             <h3>Validação dos Perfis Fábio, Elayne e Adriely (Foco Final)</h3>
                         </div>
                         <ul>
-                            <li><span class="text-accent">Fábio:</span> Peça para simular o <span style="font-weight: 700;">Cenário B</span> (Objeção de Preço do Jogo de Pratos). Avalie a argumentação dele na defesa do valor, e não do desconto.</li>
-                            <li><span class="text-accent">Elayne:</span> Aborde a questão da <span style="font-weight: 700;">comissão</span>. Como ela garantirá a motivação nos meses de transição/baixo movimento (como na experiência anterior), sabendo que a remuneração é atrelada à performance?</li>
+                            <li><span class="text-accent">Fábio:</span> Foco total em <span style="font-weight: 700;">Motivação</span>. Validar por que um administrador com 15 anos de liderança e experiência como dono quer voltar para a <span style="font-weight: 700;">execução de vendas</span>.</li>
+                            <li><span class="text-accent">Elayne:</span> Foco em <span style="font-weight: 700;">Nível de Consultoria</span>. Validar a capacidade de transição de uma venda de varejo transacional (papelaria, mix) para uma <span style="font-weight: 700;">venda consultiva de alto padrão</span> (Casa Goianita).</li>
                             <li><span class="text-accent">Adriely:</span> Validar o foco em <span style="font-weight: 700;">métricas de performance</span> (metas, atingimento) e a capacidade de <span style="font-weight: 700;">prospecção ativa (Hunter)</span>, além do atendimento consultivo (Farmer).</li>
                             <li><span class="text-accent">Geral:</span> Peça a cada um um exemplo prático de como lidariam com um <span style="font-weight: 700;">cliente irritado</span> que reclama de falta de produto ou prazo de entrega.</li>
                         </ul>
