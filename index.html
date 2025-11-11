@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avaliação Final de Candidatos - Vendas Casa Goianita</title>
-    <!-- 1.2. Tipografia (Tokens) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;1,700;1,900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Load Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         /* 1.1. Paleta de Cores (Tokens) */
@@ -60,6 +58,18 @@
         h1 { font-size: var(--font-size-h1); }
         h2 { font-size: var(--font-size-h2); }
         h3 { font-size: var(--font-size-h3); color: var(--text-primary); }
+        
+        /* NOVO ESTILO H4 para os cards */
+        h4 {
+            color: var(--text-muted); 
+            font-weight: 600; 
+            margin-top: 1.5rem; 
+            margin-bottom: 0.5rem; 
+            border-bottom: 1px solid var(--border-color); 
+            padding-bottom: 0.25rem;
+            font-size: 1.2rem;
+        }
+
         p { color: var(--text-subtle); margin-bottom: var(--space-sm); }
         .text-accent { color: var(--accent-color); font-weight: 600; }
         .text-lead { font-size: 1.25rem; color: var(--text-muted); margin-bottom: var(--space-md); }
@@ -117,7 +127,7 @@
             position: relative; /* Para o overlay do link */
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start; /* Alterado de space-between */
         }
         .card:hover {
             /* Estados de Interação: :hover */
@@ -233,7 +243,6 @@
 </head>
 <body>
 
-    <!-- 3. Estrutura e Layout: Cabeçalho -->
     <header>
         <div class="container header-content">
             <img class="logo-img" src="https://raw.githubusercontent.com/Clebito2/ConsultoriaLive/main/Logo%20live%20oficial-21.png" alt="Logo Principal da Live Consultoria" loading="lazy">
@@ -242,7 +251,6 @@
     </header>
 
     <main>
-        <!-- SEÇÃO PRINCIPAL: Introdução e Contexto -->
         <section style="padding-top: calc(var(--space-xl) + 60px);">
             <div class="container fade-in">
                 <h1 class="text-accent">Recrutamento Casa Goianita: Foco em Vendas e Relacionamento</h1>
@@ -272,7 +280,6 @@
             </div>
         </section>
 
-        <!-- SEÇÃO 1: Top Talentos (Melhor Adequação) -->
         <section>
             <div class="container">
                 <h2 class="fade-in">1. Top Talentos (Foco Atual) <i data-lucide="star"></i></h2>
@@ -282,11 +289,9 @@
                     <i data-lucide="mouse-pointer"></i>
                     <span class="text-primary">Por favor, avance para a Seção 2 para os perfis que continuam no processo.</span>
                 </div>
-                <!-- O CARD DO BRUNO FOI REMOVIDO DAQUI -->
             </div>
         </section>
 
-        <!-- SEÇÃO 2: Candidatos Sólidos (Boa Adequação) -->
         <section>
             <div class="container">
                 <h2 class="fade-in">2. Candidatos Finais (Foco do Recrutamento) <i data-lucide="users"></i></h2>
@@ -299,7 +304,6 @@
 
                 <div class="grid-3" style="margin-top: var(--space-md);">
                     
-                    <!-- Card Fábio -->
                     <div class="card fade-in" tabindex="0" style="animation-delay: 0.3s;">
                         <div class="card-header">
                             <i data-lucide="clipboard-list" class="icon"></i>
@@ -317,7 +321,6 @@
                         </ul>
                     </div>
                     
-                    <!-- Card Elayne (Atualizado com link e cor verde) -->
                     <div class="card card-highlight fade-in" tabindex="0" style="animation-delay: 0.4s;">
                         <div class="card-header">
                             <i data-lucide="mic" class="icon"></i>
@@ -335,37 +338,49 @@
                         </ul>
                     </div>
 
-                    <!-- Card Adriely (NOVO) -->
                     <div class="card fade-in" tabindex="0" style="animation-delay: 0.5s;">
                         <div class="card-header">
                             <i data-lucide="home" class="icon"></i>
                             <h3>
                                 <a href="https://drive.google.com/file/d/1t94rTJgg7-7d8eQdOhyJlLtIRWloze_C/view?usp=sharing" target="_blank" class="cv-link">
-                                    Adriely Martins <i data-lucide="external-link" class="icon" size="18"></i>
+                                    Adriely Silva da Costa <i data-lucide="external-link" class="icon" size="18"></i>
                                 </a>
                             </h3>
                         </div>
-                        <p class="merriweather">Perfil com <span class="text-accent">experiência direta em vendas consultivas de móveis de alto valor</span>.</p>
+                        
+                        <p class="merriweather" style="margin-bottom: 1rem;">
+                            <strong>Parecer Resumido:</strong> A candidata apresenta um potencial excepcional e um alinhamento de nicho raro para uma vaga de Vendas Consultivas no agronegócio. Com 21 anos, ela combina experiência prática direta na função (venda de peças agrícolas) com a formação acadêmica ideal (cursando Agronomia).
+                        </p>
+                        <p class="text-accent" style="font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem;">
+                            Recomendação: Aprovar para Entrevista (Alta Prioridade).
+                        </p>
+
+                        <h4>Destaques do Perfil (Pontos Fortes)</h4>
                         <ul>
-                            <li><span class="text-accent">Força:</span> Experiência com móveis planejados (Porto Fino Ambientes), alto envolvimento com metas e atendimento a arquitetos/designers. <span style="font-weight: 700;">Forte foco em resultados</span>.</li>
-                            <li><span class="text-accent">Habilidades:</span> Habilidade em leitura de projetos, negociação de prazos e vivência em atendimento a clientes de alto padrão.</li>
-                            <li><span class="text-accent">Insight:</span> Validar o conhecimento em <span style="font-weight: 700;">softwares de gestão (CRM/ERP)</span> e a adaptabilidade para o segmento de utilidades domésticas.</li>
+                            <li><span class="text-accent">Alinhamento NICHADO:</span> Combina experiência prática (venda de peças agrícolas) com a formação acadêmica ideal (cursando Agronomia), fornecendo credibilidade técnica.</li>
+                            <li><span class="text-accent">Foco em Venda Consultiva:</span> Enfatiza "Atendimento técnico e comercial" e "Atendimento consultivo", indicando venda de valor, não de preço.</li>
+                            <li><span class="text-accent">Estabilidade e Experiência:</span> Sólida permanência de quase 3 anos na mesma função relevante (Set/2022 - Jun/2025).</li>
+                            <li><span class="text-accent">Visão Completa do Processo:</span> Compreende "Controle e organização de estoque" e "Conferência de notas fiscais", facilitando a integração com o back-office.</li>
+                        </ul>
+
+                        <h4>Pontos de Atenção (Foco para Entrevista)</h4>
+                        <ul>
+                            <li><span class="text-accent">Validação de Métricas:</span> O CV descreve atividades, mas não resultados. Perguntar: "Qual era sua meta de vendas mensal?", "% de atingimento?", "Quantos clientes (produtores) ativos você gerenciava?".</li>
+                            <li><span class="text-accent">Perfil Hunter vs. Farmer:</span> O CV foca em "atendimento" (Farmer). Validar prospecção ativa: "Sua rotina era mais receptiva ou você tinha meta de prospecção (cold call)?".</li>
+                            <li><span class="text-accent">Gestão de Resiliência (Técnica STAR):</span> "Descreva uma situação em que um produtor estava muito insatisfeito (peça errada, prazo falhou). Qual foi sua Ação e o Resultado?".</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SEÇÃO 3: Insights Estratégicos -->
         <section>
             <div class="container">
                 <h2 class="fade-in">3. Insights Estratégicos para a Entrevista Final <i data-lucide="lightbulb"></i></h2>
                 <p class="text-lead fade-in" style="animation-delay: 0.1s;">Perguntas-chave focadas em validar os diferenciais da vaga (CRM/ERP, vivência no segmento, rede de contatos) para os candidatos finais (Fábio, Elayne, Adriely).</p>
 
-                <!-- Ajustado para layout de coluna única e destaque -->
                 <div style="max-width: 800px; margin-top: var(--space-md);">
                     
-                    <!-- Card Validação de Perfis Sólidos -->
                     <div class="card card-highlight fade-in" tabindex="0" style="animation-delay: 0.2s;">
                         <div class="card-header">
                             <i data-lucide="message-square" class="icon"></i>
@@ -374,7 +389,7 @@
                         <ul>
                             <li><span class="text-accent">Fábio:</span> Peça para simular o <span style="font-weight: 700;">Cenário B</span> (Objeção de Preço do Jogo de Pratos). Avalie a argumentação dele na defesa do valor, e não do desconto.</li>
                             <li><span class="text-accent">Elayne:</span> Aborde a questão da <span style="font-weight: 700;">comissão</span>. Como ela garantirá a motivação nos meses de transição/baixo movimento (como na experiência anterior), sabendo que a remuneração é atrelada à performance?</li>
-                            <li><span class="text-accent">Adriely:</span> Validar o conhecimento em <span style="font-weight: 700;">softwares de gestão (CRM/ERP)</span> e a adaptabilidade para o segmento de utilidades domésticas, após experiência em móveis.</li>
+                            <li><span class="text-accent">Adriely:</span> Validar o foco em <span style="font-weight: 700;">métricas de performance</span> (metas, atingimento) e a capacidade de <span style="font-weight: 700;">prospecção ativa (Hunter)</span>, além do atendimento consultivo (Farmer).</li>
                             <li><span class="text-accent">Geral:</span> Peça a cada um um exemplo prático de como lidariam com um <span style="font-weight: 700;">cliente irritado</span> que reclama de falta de produto ou prazo de entrega.</li>
                         </ul>
                     </div>
