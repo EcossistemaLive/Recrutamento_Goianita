@@ -13,7 +13,10 @@
         :root {
             --primary-bg: #06192a;
             --card-bg: #0A243D;
-            --accent-color: #00e800;
+            --accent-color: #00e800; /* Verde principal */
+            --success-color: #00e800; /* Verde para sucesso */
+            --pending-color: #FFD700; /* Amarelo/Ouro para pendente */
+            --fail-color: #ff6347; /* Vermelho suave para falha/desistência */
             --text-primary: #ffffff;
             --text-muted: #cccccc;
             --text-subtle: #a0a0a0;
@@ -175,14 +178,27 @@
             margin-right: 0;
         }
 
-        /* 4.2. Card de Diagnóstico (Proposta Comercial) - Usado para Destaque */
+        /* 4.2. Card de Destaque */
         .card-highlight {
-            border-left: 3px solid var(--accent-color);
-            padding-left: calc(var(--space-md) - 3px); /* Ajusta padding para manter alinhamento */
+            border-left: 3px solid var(--success-color);
         }
         .card-highlight .merriweather {
             font-size: 1.15rem;
             color: var(--text-muted);
+        }
+
+        /* Card de Pendência */
+        .card-pending {
+            border-left: 3px solid var(--pending-color);
+        }
+
+        /* Card de Falha/Desistência */
+        .card-fail {
+            border-left: 3px solid var(--fail-color);
+            opacity: 0.8; /* Leve opacidade para indicar que não é mais foco */
+        }
+        .card-fail:hover {
+            opacity: 1;
         }
 
         /* Caixa de Instrução para o Recrutador */
@@ -203,8 +219,11 @@
 
         /* Destaque para desclassificados */
         .desclassificado {
-            color: #ff6347; /* Vermelho suave */
+            color: var(--fail-color); /* Vermelho suave */
             font-style: italic;
+        }
+        .texto-pendente {
+             color: var(--pending-color);
         }
 
         /* Guia de Entrevista Destaque */
@@ -223,7 +242,6 @@
             text-decoration: underline;
         }
 
-
         /* 5. Animações e Performance */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -236,7 +254,6 @@
         .fade-in.is-visible {
             animation: fadeIn 0.8s ease-out forwards;
         }
-        
     </style>
 </head>
 <body>
@@ -260,7 +277,182 @@
                     <p style="color: var(--text-subtle); margin-top: 0.5rem; margin-bottom: 0;">Ferramenta essencial para a próxima etapa da seleção.</p>
                 </div>
 
-                <div class="card fade-in" style="margin-top: var(--space-md); animation-delay: 0.2s;">
+                <!-- NOTA: O card de desclassificados gerais foi movido para a Seção 1 -->
+
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2 class="fade-in">1. Resultados Finais do Processo <i data-lucide="check-circle"></i></h2>
+                <p class="text-lead fade-in" style="animation-delay: 0.1s;">
+                    Processo avançado. <span class="text-accent">Elayne Silva foi aprovada e contratada.</span> 
+                    Fábio Cantuário declinou da proposta. O foco agora é a entrevista final com <span class="texto-pendente">Adriely Silva</span> e o teste prático de <span class="texto-pendente">Viktor Kravchenko</span>.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2 class="fade-in">2. Status dos Candidatos Finais <i data-lucide="users"></i></h2>
+                <p class="text-lead fade-in" style="animation-delay: 0.1s;">Status detalhado de cada finalista do processo.</p>
+
+                <!-- Alterado de grid-3 para grid-2 para melhor acomodação dos 4 cards -->
+                <div class="grid-2" style="margin-top: var(--space-md);">
+
+                    <!-- CARD ATUALIZADO: ELAYNE (CONTRATADA) -->
+                    <div class="card card-highlight fade-in" tabindex="0" style="animation-delay: 0.3s;">
+                        <div class="card-header">
+                            <i data-lucide="party-popper" class="icon" style="color: var(--success-color);"></i>
+                            <h3>
+                                <a href="https://drive.google.com/file/d/191gaiYTXZxTvn2C6j0l9flHfFaI0OZQO/view?usp=sharing" target="_blank" class="cv-link">
+                                    Elayne Silva
+                                </a>
+                                <span class="text-accent" style="font-size: 1.1rem; margin-left: 8px;">(CONTRATADA)</span>
+                            </h3>
+                        </div>
+                        <p class="merriweather" style="margin-bottom: 1rem;">
+                            <strong>Parecer Resumido:</strong> Aprovada em todas as etapas, demonstrou excelente aderência comportamental e motivação para a venda de varejo. Entende o "ecossistema" da loja (Caixa, Recebimento, Estoque).
+                        </p>
+                        <p class="text-accent" style="font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem;">
+                            Recomendação: CONTRATADA.
+                        </p>
+                        <h4>Destaques do Perfil (Pontos Fortes)</h4>
+                        <ul>
+                            <li><span class="text-accent">Varejo Híbrido:</span> Experiência em vendas presenciais, telefone, WhatsApp e Instagram (Palmas Mix, Vip Papelaria).</li>
+                            <li><span class="text-accent">Visão 360° da Loja:</span> Experiência em "Operação de caixa", "auxílio em recebimento", "controle de estoque" e "reposição de mercadorias".</li>
+                            <li><span class="text-accent">Habilidades Comportamentais:</span> Autodeclara "Proativa", "Comunicativa" e "Atenciosa".</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- CARD ATUALIZADO: ADRIELY (PENDENTE) -->
+                    <div class="card card-pending fade-in" tabindex="0" style="animation-delay: 0.4s;">
+                        <div class="card-header">
+                            <i data-lucide="calendar-clock" class="icon" style="color: var(--pending-color);"></i>
+                            <h3>
+                                <a href="https://drive.google.com/file/d/1t94rTJgg7-7d8eQdOhyJlLtIRWloze_C/view?usp=sharing" target="_blank" class="cv-link">
+                                    Adriely Silva da Costa <i data-lucide="external-link" class="icon" size="18"></i>
+                                </a>
+                            </h3>
+                        </div>
+                        <p class="merriweather" style="margin-bottom: 1rem;">
+                            <strong>Parecer Resumido:</strong> Potencial excepcional e alinhamento de nicho raro (vendas + cursando Agronomia). Combina experiência prática direta na função (venda de peças agrícolas) com a formação acadêmica ideal.
+                        </p>
+                        <p style="color: var(--pending-color); font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem;">
+                            Recomendação: Agendar Entrevista Final (Alta Prioridade).
+                        </p>
+                        <h4>Destaques do Perfil (Pontos Fortes)</h4>
+                        <ul>
+                            <li><span class="text-accent">Alinhamento NICHADO:</span> Combina experiência prática (venda de peças agrícolas) com a formação acadêmica ideal (cursando Agronomia).</li>
+                            <li><span class="text-accent">Foco em Venda Consultiva:</span> Enfatiza "Atendimento técnico e comercial" e "Atendimento consultivo".</li>
+                            <li><span class="text-accent">Estabilidade e Experiência:</span> Sólida permanência de quase 3 anos na mesma função relevante.</li>
+                        </ul>
+                        <h4>Pontos de Atenção (Foco para Entrevista)</h4>
+                        <ul>
+                            <li><span class="text-accent">Validação de Métricas:</span> O CV descreve atividades, mas não resultados. Perguntar sobre metas, % de atingimento, etc.</li>
+                            <li><span class="text-accent">Perfil Hunter vs. Farmer:</span> Validar prospecção ativa vs. receptiva.</li>
+                            <li><span class="text-accent">Gestão de Resiliência (Técnica STAR):</span> "Descreva uma situação em que um produtor estava muito insatisfeito...".</li>
+                        </ul>
+                    </div>
+
+                    <!-- NOVO CARD: VIKTOR (PENDENTE) -->
+                    <div class="card card-pending fade-in" tabindex="0" style="animation-delay: 0.5s;">
+                        <div class="card-header">
+                            <i data-lucide="calendar-clock" class="icon" style="color: var(--pending-color);"></i>
+                            <h3>
+                                <!-- Link para a nova página de análise detalhada -->
+                                <a href="viktor_analysis.html" target="_blank" class="cv-link">
+                                    Viktor Louly Kravchenko <i data-lucide="external-link" class="icon" size="18"></i>
+                                </a>
+                            </h3>
+                        </div>
+                        <p class="merriweather" style="margin-bottom: 1rem;">
+                            <strong>Parecer Resumido:</strong> Perfil extremamente robusto para Caixa. Combina sólida experiência técnica (Caixa/Financeiro no Carrefour, Cursando Contábeis) com alta resiliência (testada em Call Center) e adaptabilidade. Demonstra fit cultural e operacional.
+                        </p>
+                        <p style="color: var(--pending-color); font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem;">
+                            Recomendação: Aprovar para Teste Prático na Loja 135 (Alta Prioridade).
+                        </p>
+                        <h4>Destaques do Perfil (Pontos Fortes)</h4>
+                        <ul>
+                            <li><span class="text-accent">Experiência Técnica (Caixa):</span> Experiência em abertura/fechamento e altos volumes (Carrefour).</li>
+                            <li><span class="text-accent">Formação Acadêmica:</span> Cursando Contábeis (UNIP), alinhado à função.</li>
+                            <li><span class="text-accent">Resiliência & Adaptabilidade:</span> Perfil testado em Call Center (pressão, clientes irritados) e aprende rápido (treinou novatos).</li>
+                            <li><span class="text-accent">Flexibilidade:</span> Demonstra proatividade para tarefas de loja (multitarefa).</li>
+                        </ul>
+                        <h4>Pontos de Validação (Foco no Teste)</h4>
+                        <ul>
+                            <li><span class="text-accent">Aderência Prática (Loja 135):</span> Validar a adaptação da experiência (Carrefour) aos processos da Casa Goianita.</li>
+                            <li><span class="text-accent">Atendimento (Público A):</span> Observar a postura e comunicação com o público de padrão mais elevado.</li>
+                        </ul>
+                    </div>
+
+                    <!-- CARD ATUALIZADO: FÁBIO (DECLINOU) -->
+                    <div class="card card-fail fade-in" tabindex="0" style="animation-delay: 0.6s;">
+                        <div class="card-header">
+                            <i data-lucide="user-x" class="icon" style="color: var(--fail-color);"></i>
+                            <h3>
+                                <a href="https://drive.google.com/file/d/1mWTmx_kcg_-TTzIEkIpMyy48-VYeu_jj/view?usp=sharing" target="_blank" class="cv-link desclassificado">
+                                    Fábio Cantuário
+                                </a>
+                                <span class="desclassificado" style="font-size: 1.1rem; margin-left: 8px;">(Declinou da Proposta)</span>
+                            </h3>
+                        </div>
+                        <p class="merriweather" style="margin-bottom: 1rem;">
+                            <strong>Parecer Resumido:</strong> Perfil Sênior (45 anos), com forte background em Liderança. Após entrevista e apresentação da proposta, <span class="desclassificado">o candidato não demonstrou interesse em continuar</span> no processo, optando por seguir em outra oportunidade.
+                        </p>
+                        <p class="desclassificado" style="font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem;">
+                            Recomendação: Arquivar (Declinou da proposta).
+                        </p>
+                        <h4>Destaques do Perfil (Arquivo)</h4>
+                        <ul>
+                            <li>Liderança Comprovada: Quase 10 anos supervisionando vendas por telefone.</li>
+                            <li>Formação Acadêmica: Graduado em Administração.</li>
+                            <li>Visão de Dono: Experiências como Sócio Proprietário.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2 class="fade-in">3. Insights Estratégicos (Foco: Adriely e Viktor) <i data-lucide="lightbulb"></i></h2>
+                <p class="text-lead fade-in" style="animation-delay: 0.1s;">Perguntas-chave e pontos de validação para os candidatos finais.</p>
+
+                <div style="max-width: 800px; margin-top: var(--space-md);">
+                    <div class="card card-highlight fade-in" tabindex="0" style="animation-delay: 0.2s; border-left-color: var(--pending-color);">
+                        <div class="card-header">
+                            <i data-lucide="message-square" class="icon" style="color: var(--pending-color);"></i>
+                            <h3>Validação do Perfil: Adriely Silva (Foco Final)</h3>
+                        </div>
+                        <ul>
+                            <li><span class="text-accent">Adriely:</span> Validar o foco em <span style="font-weight: 700;">métricas de performance</span> (metas, atingimento) e a capacidade de <span style="font-weight: 700;">prospecção ativa (Hunter)</span>, além do atendimento consultivo (Farmer).</li>
+                            <li><span class="text-accent">Geral:</span> Peça a ela um exemplo prático de como lidaria com um <span style="font-weight: 700;">cliente irritado</span> que reclama de falta de produto ou prazo de entrega (Técnica STAR).</li>
+                        </ul>
+                    </div>
+
+                    <!-- NOVO CARD DE INSIGHTS: VIKTOR -->
+                    <div class="card card-highlight fade-in" tabindex="0" style="animation-delay: 0.3s; border-left-color: var(--pending-color); margin-top: var(--space-md);">
+                        <div class="card-header">
+                            <i data-lucide="clipboard-check" class="icon" style="color: var(--pending-color);"></i>
+                            <h3>Validação do Perfil: Viktor Kravchenko (Teste Prático na Loja)</h3>
+                        </div>
+                        <ul>
+                            <li><span class="text-accent">Foco no Teste (Loja 135):</span> Validar a <span style="font-weight: 700;">aderência prática</span> da experiência de caixa (Carrefour) aos processos específicos da Casa Goianita.</li>
+                            <li><span class="text-accent">Postura e Comunicação:</span> Observar a <span style="font-weight: 700;">adaptação ao público</span> de padrão mais elevado (Classe A).</li>
+                            <li><span class="text-accent">Eficiência vs. Rigor:</span> Avaliar o equilíbrio entre <span style="font-weight: 700;">agilidade operacional</span> e a <span style="font-weight: 700;">prudência/atenção aos detalhes</span> durante a simulação.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                 <h2 class="fade-in">4. Arquivo do Processo (Desclassificados) <i data-lucide="archive"></i></h2>
+                 <p class="text-lead fade-in" style="animation-delay: 0.1s;">Candidatos que saíram do processo em etapas anteriores.</p>
+                 <div class="card fade-in" style="margin-top: var(--space-md); animation-delay: 0.2s;">
                     <p class="merriweather">
                         <span class="text-accent">Candidatos Desclassificados/Outro Foco:</span>
                         Vaneska Cirilo (Não atende escolaridade obrigatória), Carlos Lima e André Luis Martins (Desclassificados), Pedro Acioli (Foco em Logística/Gestão), Juliana Benignos (Recusou Proposta), Bruno Sousa de Almeida (Foco em Administrativo), <span class="text-accent">Iury Oliveira Gomes (Desalinhamento com Proposta)</span>, <span class="text-accent">Michel Sabino (Desalinhamento com Proposta)</span> e <span class="text-accent">Bruno dos Anjos (Desalinhamento com Proposta)</span>.
@@ -274,150 +466,6 @@
                         <a href="https://drive.google.com/file/d/1wOPgSeQKuQb8foiodNdMWk5wkwTUgf7u/view?usp=sharing" target="_blank" class="desclassificado">Michel</a>,
                         <a href="https://drive.google.com/file/d/1ERnETdrTmhpaVtdSvKCr0vF-9YxNYfUH/view?usp=sharing" target="_blank" class="desclassificado">Bruno dos Anjos</a>.
                     </p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="container">
-                <h2 class="fade-in">1. Top Talentos (Foco Atual) <i data-lucide="star"></i></h2>
-                <p class="text-lead fade-in" style="animation-delay: 0.1s;">O candidato de maior alinhamento (<span class="text-accent">Bruno dos Anjos</span>) foi desclassificado por desalinhamento de proposta. O processo segue agora focado nos <span class="text-accent">Candidatos Sólidos da Seção 2</span>.</p>
-                
-                <div class="instruction-box fade-in" style="animation-delay: 0.2s;">
-                    <i data-lucide="mouse-pointer"></i>
-                    <span class="text-primary">Por favor, avance para a Seção 2 para os perfis que continuam no processo.</span>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="container">
-                <h2 class="fade-in">2. Candidatos Finais (Foco do Recrutamento) <i data-lucide="users"></i></h2>
-                <p class="text-lead fade-in" style="animation-delay: 0.1s;">Perfis com boa experiência em vendas/gestão e alta motivação, que exigem validação de aderência para a etapa final.</p>
-
-                <div class="instruction-box fade-in" style="animation-delay: 0.2s;">
-                    <i data-lucide="mouse-pointer"></i>
-                    <span class="text-primary">Análises de Fábio e Elayne atualizadas com base nos CVs. Adriely adicionada.</span>
-                </div>
-
-                <div class="grid-3" style="margin-top: var(--space-md);">
-                    
-                    <div class="card fade-in" tabindex="0" style="animation-delay: 0.3s;">
-                        <div class="card-header">
-                            <i data-lucide="clipboard-list" class="icon"></i>
-                            <h3>
-                                <a href="https://drive.google.com/file/d/1mWTmx_kcg_-TTzIEkIpMyy48-VYeu_jj/view?usp=sharing" target="_blank" class="cv-link">
-                                    Fábio Cantuário <i data-lucide="external-link" class="icon" size="18"></i>
-                                </a>
-                            </h3>
-                        </div>
-                        <p class="merriweather" style="margin-bottom: 1rem;">
-                            <strong>Parecer Resumido:</strong> Perfil Sênior (45 anos), com forte background em **Liderança e Gestão de Equipes de Vendas** (Supervisor na Ciclo Engenharia por 9 anos, Líder no Atacadão). Experiência recente é volátil e desalinhada (Editor de Vídeo, Sócio em Confecção).
-                        </p>
-                        <p class="text-accent" style="font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem;">
-                            Recomendação: Aprovar para Entrevista (Prioridade Média).
-                        </p>
-                        <h4>Destaques do Perfil (Pontos Fortes)</h4>
-                        <ul>
-                            <li><span class="text-accent">Liderança Comprovada:</span> Quase 10 anos supervisionando vendas por telefone (Ciclo Engenharia). Sabe contratar, treinar e gerir metas.</li>
-                            <li><span class="text-accent">Formação Acadêmica:</span> Graduado em Administração, dando base teórica para a gestão.</li>
-                            <li><span class="text-accent">Visão de Dono:</span> Teve duas experiências como Sócio Proprietário, entendendo de finanças, estoque e gestão geral.</li>
-                        </ul>
-
-                        <h4>Pontos de Atenção (Foco para Entrevista)</h4>
-                        <ul>
-                            <li><span class="text-accent">Motivação (Crítico):</span> Por que um Administrador com 15 anos de liderança quer uma vaga de *execução* (chão de loja)? Risco de insatisfação a curto prazo é alto.</li>
-                            <li><span class="text-accent">Volatilidade Recente:</span> As 4 últimas posições (2017-2025) foram curtas ou fora da área. Entender a instabilidade.</li>
-                            <li><span class="text-accent">Telefone vs. Presencial:</span> Maior experiência foi em "vendas por telefone". Validar habilidade de venda consultiva presencial de alto padrão.</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="card card-highlight fade-in" tabindex="0" style="animation-delay: 0.4s;">
-                        <div class="card-header">
-                            <i data-lucide="mic" class="icon"></i>
-                            <h3>
-                                <a href="https://drive.google.com/file/d/191gaiYTXZxTvn2C6j0l9flHfFaI0OZQO/view?usp=sharing" target="_blank" class="cv-link">
-                                    Elayne Silva <i data-lucide="external-link" class="icon" size="18"></i>
-                                </a>
-                            </h3>
-                        </div>
-                        <p class="merriweather" style="margin-bottom: 1rem;">
-                            <strong>Parecer Resumido:</strong> Perfil de Varejo (Execução). Experiência direta e recente no varejo (Palmas Mix, Vip Papelaria), incluindo atendimento presencial e online (WhatsApp/Instagram). Entende o "ecossistema" da loja (Caixa, Recebimento, Estoque).
-                        </p>
-                        <p class="text-accent" style="font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem;">
-                            Recomendação: Aprovar para Entrevista (Prioridade Média).
-                        </p>
-                        <h4>Destaques do Perfil (Pontos Fortes)</h4>
-                        <ul>
-                            <li><span class="text-accent">Varejo Híbrido:</span> Experiência em vendas presenciais, telefone, WhatsApp e Instagram (Palmas Mix, Vip Papelaria).</li>
-                            <li><span class="text-accent">Visão 360° da Loja:</span> Experiência em "Operação de caixa", "auxílio em recebimento", "controle de estoque" e "reposição de mercadorias".</li>
-                            <li><span class="text-accent">Habilidades Comportamentais:</span> Autodeclara "Proativa", "Comunicativa" e "Atenciosa".</li>
-                        </ul>
-
-                        <h4>Pontos de Atenção (Foco para Entrevista)</h4>
-                        <ul>
-                            <li><span class="text-accent">Venda Transacional vs. Consultiva:</span> Experiências (papelaria, mix) são de varejo de giro rápido. Validar paciência para venda de alto valor.</li>
-                            <li><span class="text-accent">Estabilidade:</span> Passagens relativamente curtas. Validar resiliência para um modelo de comissão pura.</li>
-                            <li><span class="text-accent">Comunicação:</span> Validar se a comunicação é compatível com o público de alto padrão.</li>
-                        </ul>
-                    </div>
-
-                    <div class="card fade-in" tabindex="0" style="animation-delay: 0.5s;">
-                        <div class="card-header">
-                            <i data-lucide="home" class="icon"></i>
-                            <h3>
-                                <a href="https://drive.google.com/file/d/1t94rTJgg7-7d8eQdOhyJlLtIRWloze_C/view?usp=sharing" target="_blank" class="cv-link">
-                                    Adriely Silva da Costa <i data-lucide="external-link" class="icon" size="18"></i>
-                                </a>
-                            </h3>
-                        </div>
-                        
-                        <p class="merriweather" style="margin-bottom: 1rem;">
-                            <strong>Parecer Resumido:</strong> A candidata apresenta um potencial excepcional e um alinhamento de nicho raro para uma vaga de Vendas Consultivas no agronegócio. Com 21 anos, ela combina experiência prática direta na função (venda de peças agrícolas) com a formação acadêmica ideal (cursando Agronomia).
-                        </p>
-                        <p class="text-accent" style="font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem;">
-                            Recomendação: Aprovar para Entrevista (Alta Prioridade).
-                        </p>
-
-                        <h4>Destaques do Perfil (Pontos Fortes)</h4>
-                        <ul>
-                            <li><span class="text-accent">Alinhamento NICHADO:</span> Combina experiência prática (venda de peças agrícolas) com a formação acadêmica ideal (cursando Agronomia), fornecendo credibilidade técnica.</li>
-                            <li><span class="text-accent">Foco em Venda Consultiva:</span> Enfatiza "Atendimento técnico e comercial" e "Atendimento consultivo", indicando venda de valor, não de preço.</li>
-                            <li><span class="text-accent">Estabilidade e Experiência:</span> Sólida permanência de quase 3 anos na mesma função relevante (Set/2022 - Jun/2025).</li>
-                            <li><span class="text-accent">Visão Completa do Processo:</span> Compreende "Controle e organização de estoque" e "Conferência de notas fiscais", facilitando a integração com o back-office.</li>
-                        </ul>
-
-                        <h4>Pontos de Atenção (Foco para Entrevista)</h4>
-                        <ul>
-                            <li><span class="text-accent">Validação de Métricas:</span> O CV descreve atividades, mas não resultados. Perguntar: "Qual era sua meta de vendas mensal?", "% de atingimento?", "Quantos clientes (produtores) ativos você gerenciava?".</li>
-                            <li><span class="text-accent">Perfil Hunter vs. Farmer:</span> O CV foca em "atendimento" (Farmer). Validar prospecção ativa: "Sua rotina era mais receptiva ou você tinha meta de prospecção (cold call)?".</li>
-                            <li><span class="text-accent">Gestão de Resiliência (Técnica STAR):</span> "Descreva uma situação em que um produtor estava muito insatisfeito (peça errada, prazo falhou). Qual foi sua Ação e o Resultado?".</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="container">
-                <h2 class="fade-in">3. Insights Estratégicos para a Entrevista Final <i data-lucide="lightbulb"></i></h2>
-                <p class="text-lead fade-in" style="animation-delay: 0.1s;">Perguntas-chave focadas em validar os diferenciais da vaga (CRM/ERP, vivência no segmento, rede de contatos) para os candidatos finais (Fábio, Elayne, Adriely).</p>
-
-                <div style="max-width: 800px; margin-top: var(--space-md);">
-                    
-                    <div class="card card-highlight fade-in" tabindex="0" style="animation-delay: 0.2s;">
-                        <div class="card-header">
-                            <i data-lucide="message-square" class="icon"></i>
-                            <h3>Validação dos Perfis Fábio, Elayne e Adriely (Foco Final)</h3>
-                        </div>
-                        <ul>
-                            <li><span class="text-accent">Fábio:</span> Foco total em <span style="font-weight: 700;">Motivação</span>. Validar por que um administrador com 15 anos de liderança e experiência como dono quer voltar para a <span style="font-weight: 700;">execução de vendas</span>.</li>
-                            <li><span class="text-accent">Elayne:</span> Foco em <span style="font-weight: 700;">Nível de Consultoria</span>. Validar a capacidade de transição de uma venda de varejo transacional (papelaria, mix) para uma <span style="font-weight: 700;">venda consultiva de alto padrão</span> (Casa Goianita).</li>
-                            <li><span class="text-accent">Adriely:</span> Validar o foco em <span style="font-weight: 700;">métricas de performance</span> (metas, atingimento) e a capacidade de <span style="font-weight: 700;">prospecção ativa (Hunter)</span>, além do atendimento consultivo (Farmer).</li>
-                            <li><span class="text-accent">Geral:</span> Peça a cada um um exemplo prático de como lidariam com um <span style="font-weight: 700;">cliente irritado</span> que reclama de falta de produto ou prazo de entrega.</li>
-                        </ul>
-                    </div>
-
                 </div>
             </div>
         </section>
